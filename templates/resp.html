@@ -9,6 +9,31 @@
     <title>Your health status</title>
 </head>
 <body>
-    <p>Resp</p>
+    {{ imt }}
+    {% if imt < 16.5 %}
+        <p>Your imt : {{imt}}<br>Крайний недостаток веса</p>
+    {% elif 16.5 < imt < 18.4 %}
+        <p>Your imt : {{imt}}<br>Недостаток в весе</p>
+    {% elif imt < 16.5 %}
+        <p>Your imt : {{imt}}<br>Крайний недостаток веса</p>
+    {% elif imt < 16.5 %}
+        <p>Your imt : {{imt}}<br>Крайний недостаток веса</p>
+    {% endif %}
+
+    {{ hip_girth_to_height }}
+    {% if sex == 'Male' %}
+        {% if hip_girth_to_height < 35 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Аномально Худой</p>
+        {% endif %}
+    {% elif sex == 'Female' %}
+        {% if hip_girth_to_height < 35 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Аномально Худая</p>
+        {% elif hip_girth_to_height < 35 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Аномально Худая</p>
+        {% endif %}
+    {% endif %}
 </body>
 </html>

@@ -6,9 +6,24 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="https://logo.waldisjr.com/favicon.ico">
+    <link rel="stylesheet" href="../static/css/index.css">
     <title>Health check</title>
 </head>
 <body>
-    <p>Hi</p>
+        <h3>Enter your parameters :</h3>
+        <form action="/" method="post" name="parameters" id="parameters" onsubmit="">
+                    <label for="weight">Your weight (kg) :</label><br>
+                    <input required type="number" id="weight" name="weight"><br><br>
+                    <label for="height">Your height (cm) :</label><br>
+                    <input required type="number" id="height" name="height"><br><br>
+                    <label for="hip_girth">Your hip girth (cm) :</label><br>
+                    <input required type="number" id="hip_girth" name="hip_girth"><br><br>
+                    <label for="sex">Choose your sex :</label><br>
+                     <p><select name="sex" id="sex" required>
+                         <option selected>Female</option>
+                         <option>Male</option>
+                     </select></p><br>
+                    <input type="submit" value="Calculate">
+    </form>
 </body>
 </html>
