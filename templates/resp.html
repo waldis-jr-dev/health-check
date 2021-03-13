@@ -9,30 +9,69 @@
     <title>Your health status</title>
 </head>
 <body>
-    {{ imt }}
     {% if imt < 16.5 %}
         <p>Your imt : {{imt}}<br>Крайний недостаток веса</p>
     {% elif 16.5 < imt < 18.4 %}
         <p>Your imt : {{imt}}<br>Недостаток в весе</p>
-    {% elif imt < 16.5 %}
-        <p>Your imt : {{imt}}<br>Крайний недостаток веса</p>
-    {% elif imt < 16.5 %}
-        <p>Your imt : {{imt}}<br>Крайний недостаток веса</p>
+    {% elif 18.5 < imt < 24.9 %}
+        <p>Your imt : {{imt}}<br>Нормальный вес тела</p>
+    {% elif 25 < imt < 30 %}
+        <p>Your imt : {{imt}}<br>Избыточная масса тела</p>
+    {% elif 30.1 < imt < 34.9 %}
+        <p>Your imt : {{imt}}<br>Ожирение (Класс I)</p>
+    {% elif 35 < imt < 40 %}
+        <p>Your imt : {{imt}}<br>Ожирение (Класс II - тяжелое)</p>
+    {% elif imt > 40 %}
+        <p>Your imt : {{imt}}<br>Ожирение (Класс III - крайне тяжелое)</p>
     {% endif %}
 
-    {{ hip_girth_to_height }}
+    <br><br>
+
     {% if sex == 'Male' %}
         {% if hip_girth_to_height < 35 %}
             <p>Your hip girth to height :{{hip_girth_to_height}}<br>
             Аномально Худой</p>
+        {% elif 35 < hip_girth_to_height < 43 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Чрезмерно Худой</p>
+        {% elif 43 < hip_girth_to_height < 46 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Стройный и здоровый</p>
+        {% elif 46 < hip_girth_to_height < 53 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Здоровый, Нормальный, Идеальный Вес</p>
+        {% elif 53 < hip_girth_to_height < 58 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Избыточный вес</p>
+        {% elif 58 < hip_girth_to_height < 63 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Чрезвычайно Избыточный вес / Тучный</p>
+        {% elif hip_girth_to_height > 63 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Чрезмерно Тучный</p>
         {% endif %}
     {% elif sex == 'Female' %}
         {% if hip_girth_to_height < 35 %}
             <p>Your hip girth to height :{{hip_girth_to_height}}<br>
             Аномально Худая</p>
-        {% elif hip_girth_to_height < 35 %}
+        {% elif 35 < hip_girth_to_height < 42 %}
             <p>Your hip girth to height :{{hip_girth_to_height}}<br>
-            Аномально Худая</p>
+            Чрезмерно Худая</p>
+        {% elif 42 < hip_girth_to_height < 46 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Стройная и здоровая</p>
+        {% elif 46 < hip_girth_to_height < 49 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Здоровый, Нормальный, Идеальный Вес</p>
+        {% elif 49 < hip_girth_to_height < 54 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Избыточный вес</p>
+        {% elif 54 < hip_girth_to_height < 58 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Чрезвычайно Избыточный вес / Тучная</p>
+        {% elif hip_girth_to_height > 58 %}
+            <p>Your hip girth to height :{{hip_girth_to_height}}<br>
+            Чрезмерно Тучная</p>
         {% endif %}
     {% endif %}
 </body>
